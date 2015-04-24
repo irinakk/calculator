@@ -1,0 +1,193 @@
+:focus {
+  outline: 0;
+}
+body {
+  background-color: #D1BB92;
+  width: 100%;
+  overflow: hidden;
+}
+.tablecloth {
+  width: 100%;
+  position: absolute;
+  top: 50%;
+  left: 0;
+  margin-top: -200px;
+  height: 400px;
+}
+.tablecloth:after {
+}
+.tablecloth canvas {
+  background: #FAF5E2;
+  position: relative;
+}
+.main-content {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  margin-left: -200px;
+  margin-top: 2rem;
+}
+.calculator {
+  width: auto;
+  height: auto;
+  display: inline-block;
+  background-color: #F4ECC7;
+  border-radius: 5px;
+  padding: 40px 20px;
+  box-shadow: 10px 10px .5px #918D94;
+  box-shadow: 10px 10px 2px #C5AD99
+}
+.calculator-display {
+  display: block;
+  height: 70px;
+  line-height: 70px;
+  font-size: 25px;
+  border-radius: 4px;
+  border: 0;
+  width: 100%;
+  background: #fff;
+  padding: 0 10px;
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+}
+.calculator-bd {
+  margin-top: 1rem;
+}
+.calculator-digit-btns {
+  display: inline-block;
+  width: 230px;
+}
+.sidebar-btns {
+  display: inline-block;
+  width: 50px;
+}
+.calculator button {
+  width: 60px;
+  height: 60px;
+  display: inline-block;
+  margin-top: 1rem;
+  font-size: 1.4rem;
+  background-color: #fff;
+  border: 2px outset #FFB;
+  border-radius: 50%;
+  cursor: pointer;
+  margin-right: 20px;
+  color: #6a6a6a;
+  transition: .2s;
+}
+.calculator button:hover {
+  background-color: #FFB;
+  color: #AF95B6
+}
+.calculator-operator-btns button:last-child {
+  margin-right: 0;
+}
+.calculator-digit-btns button:nth-of-type(3n) {
+  margin-right: 0;
+}
+.glass {
+  width: 200px;
+  height: 200px;
+  background-color: #EAFDBE;
+  border-radius: 10px;
+  border: 10px solid #EAFDBE;
+  transform: rotate(30deg);
+  box-shadow: 5px 5px 2px #A1ADA8;
+  position: absolute;
+  top: -50px;
+  left: -300px;
+  margin-right: 80px;
+}
+.glass-inner {
+  background-color: rgba(255, 255, 255, .7);
+  background-image: -webkit-gradient(radial, 85 85, 50, 85 85, 100, from(rgba(255, 255, 255, 0)), to(rgba(1, 159, 98, 0)), color-stop(90%, rgb(240, 240, 240)));
+  background: -moz-radial-gradient(rgba(255, 255, 255, .6), rgba(179, 203, 207, .3));
+  width: 170px;
+  height: 170px;
+  border: 15px solid rgba(255, 255, 255, .9);
+  border-radius: 50%;
+  position: absolute;
+  margin: auto;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  box-shadow: 5px 2px 10px rgb(170, 189, 172)
+}
+.glass-inner:before {
+  content: " ";
+  position: absolute;
+  margin: auto;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  width: 100px;
+  height: 100px;
+  border: 5px solid #EFFCE5;
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, .4);
+}
+.glass-inner:after {
+  content: " ";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-image: -webkit-gradient(radial, 75 85, 7, 75 85, 12, from(rgba(255, 255, 255, 0)), to(rgba(1, 159, 98, 0)), color-stop(90%, rgba(230, 234, 234, .7))), -webkit-gradient(radial, 65 65, 3, 65 65, 7, from(rgba(255, 255, 255, 0)), to(rgba(1, 159, 98, 0)), color-stop(90%, rgba(230, 234, 234, .5))), -webkit-gradient(radial, 80 100, 5, 80 100, 7, from(rgba(255, 255, 255, 0)), to(rgba(1, 159, 98, 0)), color-stop(90%, rgba(230, 234, 234, 1))), -webkit-gradient(radial, 130 100, 3, 130 100, 7, from(rgba(255, 255, 255, 0)), to(rgba(1, 159, 98, 0)), color-stop(90%, rgba(230, 234, 234, .5))), -webkit-gradient(radial, 180 50, 5, 180 50, 10, from(rgba(255, 255, 255, 0)), to(rgba(1, 159, 98, 0)), color-stop(90%, rgba(230, 234, 234, .5))), -webkit-gradient(radial, 100 120, 3, 100 120, 6, from(rgba(255, 255, 255, 0)), to(rgba(1, 159, 98, 0)), color-stop(90%, rgba(230, 234, 234, .6)));
+}
+.pen {
+  width: 40px;
+  height: 300px;
+  background: rgb(255, 185, 142);
+  background: -webkit-gradient(linear, left top, right top, from(rgb(255, 227, 190)), to(rgb(255, 185, 142)));
+  background: -moz-linear-gradient(left, rgb(255, 227, 190), rgb(255, 185, 142));
+  position: relative;
+  display: inline-block;
+  transform: rotate(30deg);
+  margin-left: 5rem;
+  border-radius: 0 0 10px 10px;
+  box-shadow: 2px 2px 5px #CB8A76;
+}
+.pen:after {
+  content: "";
+  position: absolute;
+  top: -35px;
+  width: 40px;
+  height: 35px;
+  background: #fff;
+  background: gradient(linear, left top, left bottom, from(#746D6D), color-stop(0.3, #746D6D), color-stop(0.4, #fff), to(#fff));
+  background: -webkit-gradient(linear, left top, left bottom, from(#746D6D), color-stop(0.3, #746D6D), color-stop(0.4, #fff), to(#fff));
+  border-radius: 10px 10px 0 0;
+  background: -moz-linear-gradient(center top, rgb(252, 239, 167) 50%, #FFFECF 80%);
+  clip-path: polygon(nonzero, 50% 0, 100% 100%, 0 100%);
+  -webkit-clip-path: polygon(nonzero, 50% 0, 100% 100%, 0 100%);
+}
+.pen:before {
+  content: "";
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  height: 30px;
+  border-radius: 0 0 10px 10px;
+  border-top: 10px solid rgb(245, 70, 70);
+  background: #F2EFD5;
+  background: -webkit-gradient(linear, left top, right top, from(#fff), to(#F2EFD5));
+  background: -moz-linear-gradient(left, #fff, #F2EFD5);
+  box-shadow: 2px 2px 5px #9B7F76;
+}
+.about {
+  position: fixed;
+  right: 1rem;
+  top: 1rem;
+  width: 80px;    /*height:30px;*/
+  font-size: 14px;
+  /*font-weight: bold;*/
+  color: #fff;
+  border: 1px solid #fff;
+  border-radius: 2px;
+  text-align: center;
+  line-height: 30px;
+  text-decoration: none;
+}
