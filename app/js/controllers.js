@@ -6,18 +6,20 @@ calculateCtrlModule.controller('CalculateCtrl', ['$scope',
     $scope.tempVal = "";
     $scope.digits = ["1", "2", "3", "4", "5", "6", "7", "8", "9"];
     $scope.operators = ["+", "-", "×", "÷"];
-    $scope.equals = "="
-    $scope.dot = "."
-    $scope.zero = "0"
+    $scope.equals = "=";
+    $scope.dot = ".";
+    $scope.zero = "0";
+    $scope.reg_times = new RegExp('×', 'g');
+    $scope.reg_divides = new RegExp('÷', 'g');
 
     $scope.calculate = function() {
-      if($scope.tempVal.replace('×', '*').replace('÷', '/').match(/[\+\-\*\/]$/)){
+      if($scope.tempVal.replace($scope.reg_times, '*').replace($scope.reg_divides, '/').match(/[\+\-\*\/]$/)){
         $scope.tempVal = $scope.tempVal.substr(0, $scope.tempVal.length-1);
         $scope.expression = $scope.tempVal;
       }
       if ($scope.tempVal.length !== 0) {
         $scope.manageFloats();
-        $scope.expression = eval($scope.tempVal.replace('×', '*').replace('÷', '/'));
+        $scope.expression = eval($scope.tempVal.replace($scope.reg_times, '*').replace($scope.reg_divides, '/'));
         $scope.tempVal = "";
       }
     }
@@ -33,7 +35,7 @@ calculateCtrlModule.controller('CalculateCtrl', ['$scope',
     }
 
     $scope.showOperators = function(val) {
-      if ($scope.tempVal.replace('×', '*').replace('÷', '/').match(/[\+\-\*\/]$/)) {
+      if ($scope.tempVal.replace($scope.reg_times, '*').replace($scope.reg_divides, '/').match(/[\+\-\*\/]$/)) {
         $scope.tempVal = $scope.tempVal.substring(0, $scope.tempVal.length - 1);
         $scope.tempVal += val;
         $scope.expression = $scope.tempVal;
@@ -45,7 +47,7 @@ calculateCtrlModule.controller('CalculateCtrl', ['$scope',
     }
 
     $scope.showDot = function() {
-      if (!$scope.tempVal.match(/\./) || $scope.tempVal.match(/\./) && $scope.tempVal.substring($scope.tempVal.lastIndexOf('.')).replace('×', '*').replace('÷', '/').match(/[\+\-\*\/]/)) {
+      if (!$scope.tempVal.match(/\./) || $scope.tempVal.match(/\./) && $scope.tempVal.substring($scope.tempVal.lastIndexOf('.')).replace($scope.reg_times, '*').replace($scope.reg_divides, '/').match(/[\+\-\*\/]/)) {
         $scope.tempVal += $scope.dot;
         $scope.expression = $scope.tempVal;
       }
@@ -60,7 +62,7 @@ calculateCtrlModule.controller('CalculateCtrl', ['$scope',
       var max_precision = 0;
       for (var i = 0, len = arr1.length; i < len; i++) {
         arr1[i] = {
-          numbers: arr1[i].replace('×', '*').replace('÷', '/').replace(/(\*|\/)/g, " $1 ").split(" "),
+          numbers: arr1[i].replace($scope.reg_times, '*').replace($scope.reg_divides, '/').replace(/(\*|\/)/g, " $1 ").split(" "),
           count: 0
         };
         for (var j = 0, length = arr1[i].numbers.length; j < length; j++) {
